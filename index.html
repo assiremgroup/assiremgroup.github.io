@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assirem — Studio d'applications mobiles</title>
+  <meta name="description" content="Assirem édite des applications mobiles utiles et soignées. Sarraf : cours du dinar algérien, officiel et marché parallèle, à titre informatif." />
+  <style>
+    :root {
+      --green: #0C5E4C;
+      --brass: #E3A63C;
+      --paper: #F6F2E9;
+      --paper-card: #FBF8F0;
+      --ink: #16211E;
+      --ink-muted: #5A6B65;
+      --border: #E4DAC5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main { flex: 1; width: 100%; max-width: 640px; margin: 0 auto; padding: 48px 20px; }
+    .brand { color: var(--green); font-size: 28px; font-weight: 600; letter-spacing: 0.04em; }
+    .tagline { color: var(--ink-muted); margin-top: 4px; font-size: 15px; }
+    .card {
+      background: var(--paper-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 40px;
+    }
+    .app-name { font-size: 22px; font-weight: 600; color: var(--green); }
+    .app-name .ar { color: var(--brass); font-weight: 400; margin-inline-start: 8px; }
+    .app-desc { margin-top: 10px; color: var(--ink); font-size: 15px; }
+    .badge {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--green);
+      color: var(--paper);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 12.5px;
+    }
+    footer p + p { margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">ASSIREM</div>
+    <p class="tagline">Studio d'applications mobiles.</p>
+
+    <div class="card">
+      <div class="app-name">Sarraf<span class="ar">صرّاف</span></div>
+      <p class="app-desc">
+        Les cours du dinar algérien dans ta poche : cours officiel et taux constatés sur le
+        marché parallèle (square), historique, convertisseur et alertes — à titre informatif.
+      </p>
+      <span class="badge">Bientôt sur Google Play</span>
+    </div>
+  </main>
+  <footer>
+    <p>Les taux affichés par nos applications sont des informations publiques constatées,
+      fournies à titre indicatif uniquement. Assirem ne facilite aucune transaction de change.</p>
+    <p>© 2026 Assirem</p>
+  </footer>
+</body>
+</html>
