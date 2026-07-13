@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Assirem — Studio d'applications mobiles</title>
-  <meta name="description" content="Assirem édite des applications mobiles utiles et soignées. Sarraf : cours du dinar algérien, officiel et marché parallèle, à titre informatif." />
+  <title>Assirem — Studio d'applications mobiles · Sarraf</title>
+  <meta name="description" content="Assirem édite Sarraf : les taux de change du dinar algérien — cours officiel et taux du square côte à côte, convertisseur, historique et alertes. À titre informatif." />
   <style>
     :root {
       --green: #0C5E4C;
+      --green-deep: #0A4F40;
       --brass: #E3A63C;
       --paper: #F6F2E9;
       --paper-card: #FBF8F0;
       --ink: #16211E;
-      --ink-muted: #5A6B65;
+      --muted: #5A6B65;
       --border: #E4DAC5;
+      --mint: #9FE1CB;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -25,37 +27,59 @@
       flex-direction: column;
       min-height: 100vh;
     }
-    main { flex: 1; width: 100%; max-width: 640px; margin: 0 auto; padding: 48px 20px; }
-    .brand { color: var(--green); font-size: 28px; font-weight: 600; letter-spacing: 0.04em; }
-    .tagline { color: var(--ink-muted); margin-top: 4px; font-size: 15px; }
-    .card {
+    main { flex: 1; width: 100%; max-width: 880px; margin: 0 auto; padding: 44px 20px 56px; }
+    .brand { color: var(--green); font-size: 26px; font-weight: 600; letter-spacing: 0.05em; }
+    .tagline { color: var(--muted); margin-top: 2px; font-size: 15px; }
+
+    .hero {
+      margin-top: 36px;
+      background: linear-gradient(135deg, var(--green), var(--green-deep));
+      border-radius: 18px;
+      padding: 32px 28px;
+      color: var(--paper);
+    }
+    .hero .app-name { font-size: 30px; font-weight: 700; }
+    .hero .app-name .ar { color: var(--brass); font-weight: 400; margin-inline-start: 10px; font-size: 26px; }
+    .hero p { color: var(--mint); margin-top: 8px; max-width: 520px; font-size: 15.5px; }
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: var(--brass);
+      color: var(--green-deep);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
+
+    .shots { display: flex; gap: 14px; margin-top: 26px; justify-content: center; flex-wrap: wrap; }
+    .shots img {
+      width: 220px;
+      max-width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 22px rgba(12, 94, 76, 0.12);
+    }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 26px; }
+    .feature {
       background: var(--paper-card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px;
-      margin-top: 40px;
+      padding: 16px;
     }
-    .app-name { font-size: 22px; font-weight: 600; color: var(--green); }
-    .app-name .ar { color: var(--brass); font-weight: 400; margin-inline-start: 8px; }
-    .app-desc { margin-top: 10px; color: var(--ink); font-size: 15px; }
-    .badge {
-      display: inline-block;
-      margin-top: 16px;
-      background: var(--green);
-      color: var(--paper);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 999px;
-    }
+    .feature b { color: var(--green); display: block; font-size: 15px; margin-bottom: 3px; }
+    .feature span { color: var(--muted); font-size: 13.5px; }
+
     footer {
       border-top: 1px solid var(--border);
-      padding: 20px;
+      padding: 22px 20px;
       text-align: center;
-      color: var(--ink-muted);
+      color: var(--muted);
       font-size: 12.5px;
     }
     footer p + p { margin-top: 6px; }
+    footer a { color: var(--green); }
   </style>
 </head>
 <body>
@@ -63,16 +87,31 @@
     <div class="brand">ASSIREM</div>
     <p class="tagline">Studio d'applications mobiles.</p>
 
-    <div class="card">
+    <section class="hero">
       <div class="app-name">Sarraf<span class="ar">صرّاف</span></div>
-      <p class="app-desc">
-        Les cours du dinar algérien dans ta poche : cours officiel et taux constatés sur le
-        marché parallèle (square), historique, convertisseur et alertes — à titre informatif.
-      </p>
-      <span class="badge">Bientôt sur Google Play</span>
+      <p>Le taux de change du dinar algérien, en un coup d'œil : le cours officiel de la Banque
+      d'Algérie et le taux constaté sur le marché parallèle (le square), côte à côte — pour 7
+      devises, mis à jour toutes les 30 minutes. À titre informatif.</p>
+      <span class="badge" id="store-cta">Bientôt sur Google Play</span>
+    </section>
+
+    <div class="shots">
+      <img src="sarraf/shot-board.jpg" alt="Sarraf — board des taux : euro, dollar, livre face au dinar algérien" loading="lazy" />
+      <img src="sarraf/shot-detail.jpg" alt="Sarraf — historique du taux EUR/DZD sur 30 jours" loading="lazy" />
+      <img src="sarraf/shot-alerts.jpg" alt="Sarraf — alertes de seuil sur le taux de change" loading="lazy" />
+    </div>
+
+    <div class="features">
+      <div class="feature"><b>Officiel &amp; square, côte à côte</b><span>Le cours Banque d'Algérie, le taux constaté au square Port-Saïd, et l'écart en %.</span></div>
+      <div class="feature"><b>7 devises</b><span>EUR, USD, GBP, CAD, TRY, AED, SAR face au dinar (DZD), pour 1 et pour 100.</span></div>
+      <div class="feature"><b>Alertes de seuil</b><span>Choisis ton seuil, reçois une notification quand le taux le franchit.</span></div>
+      <div class="feature"><b>Historique</b><span>La courbe sur 7 jours, 30 jours ou 1 an, avec min et max de période.</span></div>
+      <div class="feature"><b>Convertisseur</b><span>Dans les deux sens, à l'achat comme à la vente, au taux officiel ou au square.</span></div>
+      <div class="feature"><b>3 langues, hors ligne</b><span>Français, arabe (RTL complet), anglais — les derniers taux restent visibles sans connexion.</span></div>
     </div>
   </main>
   <footer>
+    <p><a href="sarraf/privacy.html">Politique de confidentialité</a> · <a href="mailto:assiremgroup@gmail.com">Contact</a></p>
     <p>Les taux affichés par nos applications sont des informations publiques constatées,
       fournies à titre indicatif uniquement. Assirem ne facilite aucune transaction de change.</p>
     <p>© 2026 Assirem</p>
