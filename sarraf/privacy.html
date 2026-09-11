@@ -22,7 +22,7 @@
 <body>
 <main>
   <h1>Sarraf — Politique de confidentialité</h1>
-  <p class="updated">Dernière mise à jour : 13 juillet 2026 · <a href="#en">English version below</a></p>
+  <p class="updated">Dernière mise à jour : 11 septembre 2026 · <a href="#en">English version below</a></p>
 
   <p>Sarraf est une application d'information éditée par Assirem, qui affiche les taux de change du
   dinar algérien (cours officiel et taux constatés sur le marché parallèle, à titre indicatif).
@@ -38,30 +38,63 @@
   comprendre l'usage de l'application : événements anonymes (écrans consultés, conversions effectuées),
   modèle d'appareil, système, langue et pays approximatif (déduit de l'adresse IP). Ces données sont
   rattachées à un identifiant aléatoire, pas à ton identité.</p>
-  <p><strong>c) Publicité.</strong> L'application peut afficher des annonces via Google AdMob. AdMob
-  peut traiter l'identifiant publicitaire de l'appareil, l'adresse IP (localisation approximative) et
-  les interactions avec les annonces. Dans l'Espace économique européen et au Royaume-Uni, aucune
+  <p><strong>c) Publicité.</strong> L'application est conçue pour être financée par la publicité, via
+  Google AdMob. <strong>Cette fonctionnalité est désactivée à ce jour</strong> : aucune annonce n'est
+  affichée et aucune donnée n'est transmise à AdMob. Si elle est activée dans une version ultérieure,
+  cette page et la déclaration Sécurité des données de la fiche Google Play seront mises à jour
+  <strong>avant</strong> l'activation. AdMob pourra alors traiter l'identifiant publicitaire de
+  l'appareil, l'adresse IP (localisation approximative) et les interactions avec les annonces. Dans l'Espace économique européen et au Royaume-Uni, aucune
   annonce n'est chargée avant ton choix dans l'écran de consentement (Google UMP) ; tu peux modifier ce
   choix à tout moment en réinstallant l'application ou via les paramètres de confidentialité Google de
   ton appareil. Voir la <a href="https://policies.google.com/privacy">politique de confidentialité de
   Google</a> et <a href="https://policies.google.com/technologies/partner-sites">comment Google utilise
   les données</a>.</p>
 
+  <p><strong>d) Rapports de plantage.</strong> Depuis la version 1.0 (build 10), l'application utilise
+  <strong>Sentry</strong> (Functional Software Inc.) pour recevoir les rapports d'erreur, sur des
+  serveurs situés dans l'<strong>Union européenne</strong>. Sont transmis : la trace technique de
+  l'erreur, le modèle de l'appareil, la version d'Android, la version de l'application, la langue, et
+  un court journal technique des dernières actions (requête réseau effectuée — son adresse est
+  transmise <strong>sans ses paramètres</strong> —, élément de l'interface touché, messages
+  techniques). À chaque lancement, un signal de session (début et fin d'utilisation, version de
+  l'application, version d'Android) est également transmis, afin de mesurer la proportion de sessions
+  sans plantage. Ne sont <strong>jamais</strong> transmis : captures d'écran, enregistrement ou
+  hiérarchie de l'écran, contenu affiché des éléments touchés, montants saisis dans le convertisseur,
+  seuils d'alerte, jeton de notification, ni adresse IP. Ces rapports servent uniquement à corriger
+  les pannes ; ils ne sont jamais utilisés à des fins publicitaires ni croisés avec la mesure
+  d'audience.</p>
+
   <h2>2. Finalités</h2>
   <ul>
     <li>Envoyer les notifications d'alerte que tu as demandées ;</li>
     <li>Mesurer et améliorer l'application (statistiques agrégées) ;</li>
+    <li>Détecter et corriger les pannes de l'application ;</li>
     <li>Financer le service par une publicité mesurée.</li>
   </ul>
 
   <h2>3. Partage</h2>
-  <p>Nous ne vendons aucune donnée. Les seuls destinataires sont nos sous-traitants techniques :
-  Supabase (base de données), PostHog (statistiques, UE) et Google AdMob (publicité). Aucune donnée
-  n'est transmise à d'autres tiers.</p>
+  <p>Nous ne vendons aucune donnée, et nous n'en partageons aucune à des fins publicitaires ou
+  commerciales. Les données décrites ci-dessus sont traitées pour notre compte par les sous-traitants
+  techniques suivants :</p>
+  <ul>
+    <li><strong>Supabase</strong> — base de données : hébergement des taux et des alertes de seuil ;</li>
+    <li><strong>PostHog</strong> (Union européenne) — mesure d'audience ;</li>
+    <li><strong>Sentry</strong> (Union européenne) — rapports de plantage ;</li>
+    <li><strong>Expo</strong> — envoi des notifications de seuil et distribution des mises à jour de
+    l'application. À ce titre, Expo reçoit ton jeton de notification, le contenu des notifications qui
+    te sont destinées, et un identifiant d'installation transmis au lancement pour vérifier si une
+    mise à jour est disponible ;</li>
+    <li><strong>Google</strong> — Firebase Cloud Messaging assure l'acheminement final des
+    notifications vers ton appareil. Google AdMob n'intervient que si la publicité est activée
+    (voir 1c).</li>
+  </ul>
+  <p>Aucune donnée n'est transmise à d'autres tiers.</p>
 
   <h2>4. Conservation</h2>
   <p>Le jeton de notification est conservé tant que tu as au moins une alerte active. Les événements de
-  mesure d'audience sont conservés selon la durée standard de PostHog puis agrégés ou supprimés.</p>
+  mesure d'audience sont conservés selon la durée standard de PostHog puis agrégés ou supprimés. Les
+  rapports de plantage et les signaux de session sont conservés 90 jours par Sentry, puis supprimés
+  automatiquement.</p>
 
   <h2>5. Tes choix</h2>
   <ul>
@@ -81,7 +114,7 @@
 
   <div class="en">
   <h1>Sarraf — Privacy Policy</h1>
-  <p class="updated">Last updated: July 13, 2026</p>
+  <p class="updated">Last updated: September 11, 2026</p>
 
   <p>Sarraf is an information app published by Assirem. It displays Algerian dinar exchange rates
   (official rate and publicly observed parallel market rates, for information only). The app works
@@ -95,25 +128,53 @@
   <p><strong>b) Analytics.</strong> We use PostHog (hosted in the European Union) to understand app
   usage: anonymous events (screens viewed, conversions made), device model, OS, language and
   approximate country (derived from the IP address), linked to a random identifier.</p>
-  <p><strong>c) Advertising.</strong> The app may show ads through Google AdMob. AdMob may process the
+  <p><strong>c) Advertising.</strong> The app is designed to be ad-supported, through Google AdMob.
+  <strong>This feature is disabled as of today</strong>: no ads are shown and no data is sent to
+  AdMob. If it is enabled in a later version, this page and the Data safety declaration on the Google
+  Play listing will be updated <strong>before</strong> that activation. AdMob may then process the
   device advertising ID, IP address (approximate location) and ad interactions. In the EEA/UK no ad is
   loaded before your choice in the consent screen (Google UMP). See
   <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+
+  <p><strong>d) Crash reports.</strong> Since version 1.0 (build 10), the app uses
+  <strong>Sentry</strong> (Functional Software Inc.) to receive error reports, on servers located in
+  the <strong>European Union</strong>. What is sent: the technical stack trace of the error, the
+  device model, the Android version, the app version, the language, and a short technical trail of
+  recent actions (network request made — its address is sent <strong>without its parameters</strong>
+  —, interface element tapped, technical messages). At each launch, a session signal (start and end of
+  use, app version, Android version) is also sent, in order to measure the share of crash-free
+  sessions. What is <strong>never</strong> sent: screenshots, screen recordings or view hierarchy, the
+  displayed text of tapped elements, amounts typed in the converter, alert thresholds, push token, or
+  IP address. These reports are used only to fix failures; they are never used for advertising and
+  never combined with analytics.</p>
 
   <h2>2. Purposes</h2>
   <ul>
     <li>Delivering the alert notifications you requested;</li>
     <li>Measuring and improving the app (aggregated statistics);</li>
+    <li>Detecting and fixing app failures;</li>
     <li>Funding the service through measured advertising.</li>
   </ul>
 
   <h2>3. Sharing</h2>
-  <p>We sell no data. The only recipients are our technical processors: Supabase (database), PostHog
-  (analytics, EU) and Google AdMob (advertising).</p>
+  <p>We sell no data, and we share none of it for advertising or commercial purposes. The data
+  described above is processed on our behalf by the following technical processors:</p>
+  <ul>
+    <li><strong>Supabase</strong> — database: hosting of rates and threshold alerts;</li>
+    <li><strong>PostHog</strong> (European Union) — analytics;</li>
+    <li><strong>Sentry</strong> (European Union) — crash reports;</li>
+    <li><strong>Expo</strong> — delivery of threshold notifications and distribution of app updates.
+    For this, Expo receives your push token, the content of the notifications addressed to you, and an
+    installation identifier sent at launch to check whether an update is available;</li>
+    <li><strong>Google</strong> — Firebase Cloud Messaging performs the final delivery of
+    notifications to your device. Google AdMob is involved only if advertising is enabled (see 1c).</li>
+  </ul>
+  <p>No data is passed to any other third party.</p>
 
   <h2>4. Retention</h2>
   <p>The push token is kept as long as you have at least one active alert. Analytics events follow
-  PostHog's standard retention before aggregation or deletion.</p>
+  PostHog's standard retention before aggregation or deletion. Crash reports and session signals are
+  kept for 90 days by Sentry, then deleted automatically.</p>
 
   <h2>5. Your choices</h2>
   <ul>
